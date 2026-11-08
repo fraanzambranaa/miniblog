@@ -75,3 +75,24 @@ revisión; después entra como `docente.demo` (o como administrador), revísala 
 
 > **Importante:** borra estos usuarios (en `/admin/users/`, como administrador) o cambia su contraseña
 > antes de publicar el blog en internet. Contraseñas conocidas en un servidor público son un riesgo.
+
+## Cómo he desplegado el proyecto
+
+Para desplegar el proyecto en local he seguido estos pasos:
+
+1. He clonado mi repositorio de GitHub.
+2. He accedido a la carpeta miniblog.
+3. He instalado las dependencias con Composer.
+4. He creado la base de datos SQLite.
+5. He creado el usuario administrador.
+6. He iniciado el servidor local de PHP.
+
+### Comandos utilizados
+
+```bash
+git clone URL_DEL_REPOSITORIO
+cd miniblog
+composer install
+php bin/console create-schema
+php bin/console app:create-user admin "Administrador"
+php -S localhost:8000 -t public
